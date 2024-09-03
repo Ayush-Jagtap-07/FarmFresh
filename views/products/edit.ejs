@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+                <h1>Edit Product</h1>
+
+                <form method="POST" action="/farmfresh/<%= product._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data" >
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="product[name]" value="<%= product.name %>" class="form-control" required>
+                        <div class="invalid-feedback">Please enter valid name</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload new image</label>
+                        <input type="file" name="product[image]" class="form-control">
+                        <div class="invalid-feedback">Please enter valid image</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <img src="<%= originalImageUrl %>" style="height: 100%;" width="100%;" alt="">
+                        </div>
+                    </div>
+                    
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="product[price]" value="<%= product.price %>" class="form-control" required>
+                        <div class="invalid-feedback">Please enter valid price</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Quantity</label>
+                        <input type="number" name="product[quantity]" value="<%= product.quantity %>" class="form-control" required>
+                        <div class="invalid-feedback">Please enter valid quantity</div>
+                    </div>
+
+                    <button class=" btn buttons mb-3" >Edit</button>
+
+                </form>
+            </div>
+        </div>
+    </body>

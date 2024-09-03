@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+
+        <div class="row mt-3">
+                <div class="col-8 offset-2">
+                    <h1>
+                        <%= product.name %>
+                    </h1>
+                </div>
+            
+            <div class="col-6 offset-2">
+                <div class="card mt-3">
+                    <img src="<%= product.image.url %>" class=" card-img-top show-img" alt="product_image">
+                    <div class="card-body mt-3">
+                        <p class="card-text show-card-text">
+
+                            <form method="POST" action="/add-to-cart/<%= product._id %>">
+
+                            <% if (product.unit=="kg" ) { %>
+                                Quantity available : <%= product.quantity %> kg <br>
+                                    <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+
+                                        <input class="btn-check" type="radio" id="250g" value="<%= product.price/4 %>,250g" name="buyQuantity" required>
+                                        <label class="btn radio-buttons" for="250g">&#8377; <%= product.price/4 %>/250g</label>
+
+                                        <input class="btn-check" type="radio" id="500g" value="<%= product.price/2 %>,500g"
+                                            name="buyQuantity">
+                                        <label class="btn radio-buttons" for="500g">&#8377; <%= product.price/2 %>/500g
+                                        </label>
+
+                                        <input class="btn-check" type="radio" id="1kg" value="<%= product.price %>,1Kg" name="buyQuantity">
+                                        <label class="btn radio-buttons" for="1kg">&#8377; <%= product.price %>/1kg</label>
+                                        <div class="invalid-feedback">Please select product quantity</div>
+                                    </div>
+                            <% } else { %>
+                                Quantity available : <%= product.quantity %> litre <br>
+                                    <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+
+                                        <input class="btn-check" type="radio" id="250ml" value="<%= product.price/4 %>,250ml"
+                                            name="buyQuantity" required>
+                                        <label class="btn radio-buttons" for="250ml">&#8377; <%= product.price/4 %>
+                                                /250ml</label>
+
+                                        <input class="btn-check" type="radio" id="500ml" value="<%= product.price/2 %>,500ml"
+                                            name="buyQuantity">
+                                        <label class="btn radio-buttons" for="500ml">&#8377; <%= product.price/2
+                                                %>/500ml </label>
+
+                                        <input class="btn-check" type="radio" id="1litre" value="<%= product.price %>,1litre"
+                                            name="buyQuantity">
+                                        <label class="btn radio-buttons" for="1litre">&#8377; <%= product.price %>
+                                                /1litre</label>
+                                        <div class="invalid-feedback">Please select product quantity</div>
+                                    </div>
+                                    <% } %>
+                                    <br>
+                                    <button class="btn buttons" >Add to Cart</button>
+                            </form>
+
+                        </p>
+
+                    </div>
+                </div>
+
+                <% if ( currUser && currUser.username == "Ayush" ) { %>
+
+                <div class="show-btns mt-4">
+                    <a href="/farmfresh/<%= product._id %>/edit" style="font-size: 1.5rem;" class=" btn buttons"><i
+                            class="fa-solid fa-pen-to-square"></i></a>
+                    <br><br>
+                    <form method="POST" action="/farmfresh/<%= product._id %>?_method=DELETE">
+                        <button style="font-size: 1.5rem;" class=" btn buttons"><i
+                                class="fa-solid fa-trash-can"></i></button>
+                    </form>
+                </div>
+
+                <% } %>
+
+            </div>
+        </div>
+    </body>

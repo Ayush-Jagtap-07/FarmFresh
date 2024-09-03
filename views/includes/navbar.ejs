@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md bg-body-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/farmfresh"> <img src="https://res.cloudinary.com/dxzcugmwi/image/upload/v1725192175/FarmFresh-Logo_jmiewl.png" alt="Bootstrap" width="30" height="24"> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+            <div class="navbar-nav ">
+                <a class="nav-link m-2" href="/farmfresh">FarmFresh</a>
+                <a class="nav-link m-2" href="/farmfresh/shop">Shop</a>
+                <% if(currUser && currUser.username == "Ayush") { %>
+                <a class="nav-link m-2" href="/farmfresh/shop/new">Add Products</a>
+                <% } %>
+            </div>
+
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link m-2" href="/cart">Cart</a>
+                <% if(!currUser) { %>
+                <a class="nav-link m-2" href="/farmfresh/signup">Signup</a>
+                <a class="nav-link m-2" href="/farmfresh/login">Login</a>
+                <% } %>
+                <% if(currUser) { %>
+                <a class="nav-link m-2" href="/farmfresh/logout">Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,39 @@
+<div class="footer">
+
+    <div class="footer-div">
+
+        <div class="footer-div-ele">
+            <div class="footer-div-ele-heading" >CONTACT</div>
+            <p>customersupport@farmfresh.com</p>
+            <p> 88888-xxxxx</p>
+        </div>
+
+        <div class="vr"></div>
+
+        <div class="footer-div-ele">
+            <div class="footer-div-ele-heading" >COPYRIGHT</div>
+            <p> Privacy Policy »</p>
+            <p> Terms of Use »</p>
+            <p> Cookie Preferences »</p>
+        </div>
+
+        <div class="vr"></div>
+
+        <div class="footer-div-ele">
+            <div class="footer-div-ele-heading" >ACCOUNT</div>
+            <% if(!currUser) { %>
+            <a class="btn footer-div-ele-btn " href="/farmfresh/signup" >Signup</a>
+            <a class="btn footer-div-ele-btn " href="/farmfresh/login" >Login</a>
+            <% } %>
+            <% if(currUser) { %>
+            <a class="btn footer-div-ele-btn " href="/farmfresh/logout">Logout</a>
+            <% } %>
+        </div>
+
+        <div class="vr"></div>
+
+        <div class="footer-logo">
+            <img src="https://res.cloudinary.com/dxzcugmwi/image/upload/v1725192175/FarmFresh-Logo_jmiewl.png" alt="FarmFresh-Logo">
+        </div>
+    </div>
+</div>
