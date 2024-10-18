@@ -22,15 +22,15 @@
                                     <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
 
                                         <input class="btn-check" type="radio" id="250g" value="<%= product.price/4 %>,250g" name="buyQuantity" required>
-                                        <label class="btn radio-buttons" for="250g">&#8377; <%= product.price/4 %>/250g</label>
+                                        <label class="btn radio-buttons" for="250g">&#8377;<%= product.price/4 %>/250g</label>
 
                                         <input class="btn-check" type="radio" id="500g" value="<%= product.price/2 %>,500g"
                                             name="buyQuantity">
-                                        <label class="btn radio-buttons" for="500g">&#8377; <%= product.price/2 %>/500g
+                                        <label class="btn radio-buttons" for="500g">&#8377;<%= product.price/2 %>/500g
                                         </label>
 
                                         <input class="btn-check" type="radio" id="1kg" value="<%= product.price %>,1Kg" name="buyQuantity">
-                                        <label class="btn radio-buttons" for="1kg">&#8377; <%= product.price %>/1kg</label>
+                                        <label class="btn radio-buttons" for="1kg">&#8377;<%= product.price %>/1kg</label>
                                         <div class="invalid-feedback">Please select product quantity</div>
                                     </div>
                             <% } else { %>
@@ -39,17 +39,17 @@
 
                                         <input class="btn-check" type="radio" id="250ml" value="<%= product.price/4 %>,250ml"
                                             name="buyQuantity" required>
-                                        <label class="btn radio-buttons" for="250ml">&#8377; <%= product.price/4 %>
+                                        <label class="btn radio-buttons" for="250ml">&#8377;<%= product.price/4 %>
                                                 /250ml</label>
 
                                         <input class="btn-check" type="radio" id="500ml" value="<%= product.price/2 %>,500ml"
                                             name="buyQuantity">
-                                        <label class="btn radio-buttons" for="500ml">&#8377; <%= product.price/2
+                                        <label class="btn radio-buttons" for="500ml">&#8377;<%= product.price/2
                                                 %>/500ml </label>
 
                                         <input class="btn-check" type="radio" id="1litre" value="<%= product.price %>,1litre"
                                             name="buyQuantity">
-                                        <label class="btn radio-buttons" for="1litre">&#8377; <%= product.price %>
+                                        <label class="btn radio-buttons" for="1litre">&#8377;<%= product.price %>
                                                 /1litre</label>
                                         <div class="invalid-feedback">Please select product quantity</div>
                                     </div>
